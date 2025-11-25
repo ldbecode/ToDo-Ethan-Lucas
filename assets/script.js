@@ -1,6 +1,5 @@
 let tasks = [];
 
-
 function saveTasks() {
     localStorage.setItem('todo-list-tasks', JSON.stringify(tasks));
 }
@@ -11,7 +10,6 @@ function loadTasks() {
         tasks = JSON.parse(storedTasks);
     }
 }
-
 
 function addTask() {
     const input = document.getElementById('taskInput');
@@ -35,13 +33,13 @@ function addTask() {
 }
 
 function deleteTask(taskId) {
-    tasks = tasks.filter(t => t.id !== taskId);
+    tasks = tasks.filter(task => task.id !== taskId);
     displayTasks();
     saveTasks();
 }
 
 function toggleCompleted(taskId) {
-    const taskToUpdate = tasks.find(t => t.id === taskId);
+    const taskToUpdate = tasks.find(task => task.id === taskId);
 
     if (taskToUpdate) {
         taskToUpdate.completed = !taskToUpdate.completed;
@@ -49,7 +47,6 @@ function toggleCompleted(taskId) {
         saveTasks();
     }
 }
-
 
 function displayTasks() {
     const taskList = document.getElementById('taskList');
@@ -59,11 +56,10 @@ function displayTasks() {
         const li = document.createElement('li');
         li.className = `task ${task.completed ? 'completed' : ''}`;
 
-  
         li.innerHTML = `
           <div class="button">
             <h1 class="task-title">${task.text}</h1> 
-            <p>Cliquez pour marquer complété</p>
+            <p>Click to mark complete</p>  
             <div class="members">
               <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
@@ -79,7 +75,6 @@ function displayTasks() {
             deleteTask(task.id);
         });
 
- 
         li.addEventListener('click', function() {
             toggleCompleted(task.id);
         });
