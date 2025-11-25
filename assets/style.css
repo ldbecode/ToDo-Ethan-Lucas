@@ -63,3 +63,8 @@ body {
     /* small size */
     height: 30px;
 }
+
+.task.completed .task-title {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
