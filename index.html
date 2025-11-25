@@ -4,83 +4,47 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODOLIST</title>
+    <title>To Do List</title>
 
     <link rel="stylesheet" href="assets/style.css">
-    <script src="assets/script.js"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+    <script src="assets/script.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>My Todo List</h1>
-        
-     
+    
+    <div class="add-column">
+        <h1>New Task</h1>
         <div class="add-task">
-            <input type="text" id="taskInput" placeholder="Enter your task Title...">
-            <textarea name="textDesc" id="taskDescInput"placeholder="Enter a short task Description..."></textarea>
-            <button id="addButton">Add</button>
+            <input type="text" id="taskTitleInput" placeholder="Enter task title...">
+            <textarea id="taskDescInput" placeholder="Enter a short task description."></textarea>
+            <div id="assignees"></div>
+            <button id="addButton">Add Task</button>
+        </div>
+    </div>
+
+    <div class="kanban-board">
+        
+        <div class="container">
+            <h1>To Do</h1>
+            <ul class="task-list" id="taskListToDo"></ul>
         </div>
         
-   
-        <ul id="taskList">
-          
-            <li class="task">
-                <div class="button">
-                    <h1>Title</h1>
-                    <p>Task Description</p>
-                    <div class="members">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
-                    </div>
-                    <button class="deleteBtn">Delete</button>
-                </div>
-            </li>
-        </ul>
+        <div class="container">
+            <h1>Doing</h1>
+            <ul class="task-list" id="taskListDoing"></ul>
+        </div>
         
+        <div class="container">
+            <h1>Done</h1>
+            <ul class="task-list" id="taskListDone"></ul>
+        </div>
+
     </div>
-    <div class="container">
-        <h1>My Todo List</h1>
-    
-        <ul id="taskList">
-          
-            <li class="task">
-                <div class="button">
-                    <h1>Title</h1>
-                    <p>Task Description</p>
-                    <div class="members">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
-                    </div>
-                    <button class="deleteBtn">Delete</button>
-                </div>
-            </li>
-        </ul>
-        
-    </div>
-    <div class="container">
-        <h1>My Todo List</h1>
-        <ul id="taskList">
-          
-            <li class="task">
-                <div class="button">
-                    <h1>Title</h1>
-                    <p>Task Description</p>
-                    <div class="members">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
-                    </div>
-                    <button class="deleteBtn">Delete</button>
-                </div>
-            </li>
-        </ul>
-        
-    </div>
+
 </body>
+</html>
