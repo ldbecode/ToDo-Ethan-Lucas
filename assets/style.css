@@ -30,17 +30,19 @@ body {
 }
 
 .task {
-    border: 5px solid chartreuse;
+    
     flex: 1;
     max-height: 30%;
-
     width: 100%;
+    
 }
 
 .button {
     display: flex;
     align-items: stretch;
     flex-direction: column;
+    border: 5px solid chartreuse;
+    margin-top: 30px;
 }
 
 .button h1 {
@@ -55,13 +57,19 @@ body {
     display: flex;
     justify-content: space-around;
     gap: 10px;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .social-icon {
     width: 30px;
     /* small size */
     height: 30px;
+}
+
+.add-task{
+    display: flex;
+    flex-direction: column;
 }
 
 .task.completed .task-title {

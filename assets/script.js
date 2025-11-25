@@ -13,14 +13,21 @@ function loadTasks() {
 
 function addTask() {
     const input = document.getElementById('taskInput');
-    const taskText = input.value.trim();
-
+    const inputDesc = document.getElementById('taskDescInput');
+    const taskTitle = input.value.trim();
+    const taskText = inputDesc.value.trim();
+    
+    if (taskTitle === '') {
+        alert('Please enter a Title.');
+        return;
+    }
     if (taskText === '') {
-        alert('Please enter a task.');
+        alert('Please enter a Description.');
         return;
     }
 
     tasks.push({
+        title: taskTitle,
         text: taskText,
         completed: false,
         id: Date.now()
@@ -29,6 +36,7 @@ function addTask() {
     displayTasks();
     saveTasks();
     input.value = '';
+    inputDesc.value = '';
     input.focus();
 }
 
@@ -58,8 +66,8 @@ function displayTasks() {
 
         li.innerHTML = `
           <div class="button">
-            <h1 class="task-title">${task.text}</h1> 
-            <p>Click to mark complete</p>  
+            <h1 class="task-title">${task.title}</h1> 
+            <pre>${task.text}</pre>  
             <div class="members">
               <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
